@@ -1,0 +1,74 @@
+Group gOffice1 "Office 001"
+Group gOffice2 "Office 002"
+Group gOffice3 "Office 003"
+Group gOffice4 "Office 004"
+Group gOffice5 "Office 005"
+Group gHead "Head Office"
+Group gMeetingRoom "Meeting Room"
+Group gPowerCon "Power Consumption"
+
+Group gOffice1CT
+Group gOffice2CT
+Group gOffice3CT
+Group gOffice4CT
+Group gOffice5CT
+Group gHeadCT
+Group gMeetingRoomCT
+
+Group gOffice1CH
+Group gOffice2CH
+Group gOffice3CH
+Group gOffice4CH
+Group gOffice5CH
+Group gHeadCH
+Group gMeetingRoomCH
+
+Group gPowerCP
+
+
+Number Bool { http="<[http://localhost/info.php:1000:REGEX(*)]" }
+
+Number gOffice1T "Temperature [%.2f  °C]" <temperature> (gOffice1,gOffice1CT) { http="<[http://localhost/temp.php:1000:REGEX(*)]" }
+
+Number gOffice1H "Humidity is at [%d]" <humidity> (gOffice1,gOffice1CH) { http="<[http://localhost/humidity.php:1000:REGEX(*)]" }
+
+Number gOffice2T "Temperature [%.2f  °C]" <temperature> (gOffice2,gOffice2CT) { http="<[http://localhost/temp.php:1000:REGEX(*)]" }
+Number gOffice2H"Humidity is at [%d]" <humidity> (gOffice2,gOffice2CH) { http="<[http://localhost/humidity.php:1000:REGEX(*)]" }
+
+Number gOffice3T "Temperature [%.2f  °C]" <temperature> (gOffice3,gOffice3CT) { http="<[http://localhost/temp.php:1000:REGEX(*)]" }
+Number gOffice3H "Humidity is at [%d]" <humidity> (gOffice3,gOffice3CH) { http="<[http://localhost/humidity.php:1000:REGEX(*)]" }
+
+Number gOffice4T "Temperature [%.2f  °C]" <temperature> (gOffice4,gOffice4CT) { http="<[http://localhost/temp.php:1000:REGEX(*)]" }
+Number gOffice4H "Humidity is at [%d]" <humidity> (gOffice4,gOffice4CH) { http="<[http://localhost/humidity.php:1000:REGEX(*)]" }
+
+Number gOffice5T "Temperature [%.2f  °C]" <temperature> (gOffice5,gOffice5CT) { http="<[http://localhost/temp.php:1000:REGEX(*)]" }
+Number gOffice5H "Humidity is at [%d]" <humidity> (gOffice5,gOffice5CH) { http="<[http://localhost/humidity.php:1000:REGEX(*)]" }
+
+Number gHeadT "Temperature [%.2f  °C]" <temperature> (gHead,gHeadCT) { http="<[http://localhost/temp.php:1000:REGEX(*)]" }
+Number gHeadH "Humidity is at [%d]" <humidity> (gHead,gHeadCH) { http="<[http://localhost/humidity.php:1000:REGEX(*)]" }
+
+Number gMeetingRoomT "Temperature [%.2f  °C]" <temperature> (gMeetingRoom,gMeetingRoomCT) { http="<[http://localhost/temp.php:1000:REGEX(*)]" }
+Number gMeetingRoomH "Humidity is at [%d]" <humidity> (gMeetingRoom,gMeetingRoomCH) { http="<[http://localhost/humidity.php:1000:REGEX(*)]" }
+
+Number gPower "Power Consumption [%.2f  watts]" <temperature> (gPowerCon,gPowerCP) { http="<[http://localhost/power.php:1000:REGEX(*)]" }
+
+Number People { http="<[http://localhost/ppl.php:1000:REGEX(*)]" }
+
+// Time and Weather Items
+//------------------------------------------------------------------------------------------------------------------------------------------------
+Switch      Night
+Switch      Day
+Switch      Lights
+
+//Airconditioning
+//------------------------------------------------------------------------------
+Switch gOffice1AC
+Switch gOffice2AC
+Switch gOffice3AC
+Switch gOffice4AC
+Switch gOffice5AC
+Switch gHeadAC
+Switch gMeetingRoomAC
+
+
+

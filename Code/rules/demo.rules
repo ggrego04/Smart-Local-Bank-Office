@@ -1,0 +1,126 @@
+import org.openhab.core.types.*
+import org.openhab.core.library.items.*
+import org.eclipse.xtext.xbase.lib.*
+import java.util.Map
+import java.util.Set
+import org.joda.time.*
+
+
+//-------------AC ------------------
+rule "AC1"
+when
+    Item gOffice1T received update
+then
+  if(gOffice1T.state as DecimalType > 28){ 
+     	sendCommand(gOffice1AC,ON)
+
+   }else{
+    	sendCommand(gOffice1AC,OFF)
+   }
+
+end
+
+rule "AC2"
+when
+    Item gOffice2T received update
+then
+  if(gOffice2T.state as DecimalType > 28){ 
+     	sendCommand(gOffice2AC,ON)
+
+   }else{
+    	sendCommand(gOffice2AC,OFF)
+   }
+
+end
+
+rule "AC3"
+when
+    Item gOffice3T received update
+then
+  if(gOffice3T.state as DecimalType > 28){ 
+     	sendCommand(gOffice3AC,ON)
+
+   }else{
+    	sendCommand(gOffice3AC,OFF)
+   }
+
+end
+
+rule "AC4"
+when
+    Item gOffice4T received update
+then
+  if(gOffice4T.state as DecimalType > 28){ 
+     	sendCommand(gOffice4AC,ON)
+
+   }else{
+    	sendCommand(gOffice4AC,OFF)
+   }
+
+end
+
+rule "AC5"
+when
+    Item gOffice5T received update
+then
+  if(gOffice5T.state as DecimalType > 28){ 
+     	sendCommand(gOffice5AC,ON)
+
+   }else{
+    	sendCommand(gOffice5AC,OFF)
+   }
+
+end
+
+rule "AC6"
+when
+    Item gHeadT received update
+then
+  if(gHeadT.state as DecimalType > 28){ 
+     	sendCommand(gHeadAC,ON)
+
+   }else{
+    	sendCommand(gHeadAC,OFF)
+   }
+
+end
+
+rule "AC7"
+when
+    Item gMeetingRoomT received update
+then
+  if(gMeetingRoomT.state as DecimalType > 28){ 
+     	sendCommand(gMeetingRoomAC,ON)
+
+   }else{
+    	sendCommand(gMeetingRoomAC,OFF)
+   }
+
+end
+
+//----------------Time of Day Rules-------------------------
+
+
+rule "Day start"
+when
+    Item Bool received update
+then
+    if (Bool.state as DecimalType > 2){
+    	Day.sendCommand(OFF)
+    	Night.sendCommand(ON)
+    }else{
+    	Day.sendCommand(ON)
+    	Night.sendCommand(OFF)
+    }
+end
+
+rule "Lighting"
+when
+	Item People received update
+then
+	if(Bool.state as DecimalType > 2 && People.state as DecimalType > 0){
+		Lights.sendCommand(ON)
+	}else{
+		Lights.sendCommand(OFF)
+	}
+end

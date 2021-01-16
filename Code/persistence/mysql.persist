@@ -1,0 +1,9 @@
+Strategies{
+	 everyMinute : "0 * * * * ?"	
+	default = everyChange
+}
+
+Items{
+	gPower,gOffice1T,gOffice1H,gOffice2T,gOffice2H,gOffice3T,gOffice3H,gOffice4T,gOffice4H,gOffice5T,gOffice5H,gHeadT,gHeadH,gMeetingRoomT,gMeetingRoomH : strategy = everyChange, restoreOnStartup
+
+}

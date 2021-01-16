@@ -1,0 +1,74 @@
+sitemap demo label="Smart Local Bank Office."
+{
+      Frame
+      {
+              Group item=gBank label="Bank" icon="bank"
+              {
+		    Switch item=Day label="Day" icon="sun"
+		    Switch item=Night label="Night" icon="moon"
+		    
+
+                    Group item=gOffice1 label="Office 001" icon="office"{
+                        Text item=gOffice1T label="Temperature [%.2f °C]" icon="temperature"
+                        Text item=gOffice1H label="Humidity [%d ]" icon="humidity"
+			Switch item=gOffice1AC label="Air Conditioner" icon="aircond"
+                        Chart item=gOffice1CT period=h refresh=1000 legend=true
+                        Chart item=gOffice1CH period=h refresh=1000 legend=true
+                    } 
+                    Group item=gOffice2 label="Office 002" icon="office"{
+                        Text item=gOffice2T label="Temperature [%.1f °C]" icon="temperature"
+                        Text item=gOffice2H label="Humidity [%d ]" icon="humidity"
+			Switch item=gOffice2AC label="Air Conditioner" icon="aircond"
+                        Chart item=gOffice2CT period=h refresh=1000 legend=true
+                        Chart item=gOffice2CH period=h refresh=1000 legend=true
+                    }
+                    Group item=gOffice3 label="Office 003" icon="office"{
+                        Text item=gOffice3T label="Temperature [%.1f °C]" icon="temperature"
+                        Text item=gOffice3H label="Humidity [%d ]" icon="humidity"
+			Switch item=gOffice3AC label="Air Conditioner" icon="aircond"
+                        Chart item=gOffice3CT period=h refresh=1000 legend=true
+                        Chart item=gOffice3CH period=h refresh=1000 legend=true
+                    }
+                    Group item=gOffice4 label="Office 004" icon="office"{
+                        Text item=gOffice4T label="Temperature [%.1f °C]" icon="temperature"
+                        Text item=gOffice4H label="Humidity [%.1f ]" icon="humidity"
+			Switch item=gOffice4AC label="Air Conditioner" icon="aircond"
+                        Chart item=gOffice4CT period=h refresh=1000 legend=true
+                        Chart item=gOffice4CH period=h refresh=1000 legend=true
+                    }  
+                    Group item=gOffice5 label="Office 005" icon="office"{
+                        Text item=gOffice5T label="Temperature [%.1f °C]" icon="temperature"
+                        Text item=gOffice5H label="Humidity [%d ]" icon="humidity"
+			Switch item=gOffice5AC label="Air Conditioner" icon="aircond"
+                        Chart item=gOffice5CT period=h refresh=1000 legend=true
+                        Chart item=gOffice5CH period=h refresh=1000 legend=true
+                    }
+                    Group item=gHead label="Head Office" icon="office"{
+                        Text item=gHeadT label="Temperature [%.1f °C]" icon="temperature"
+                        Text item=gHeadH label="Humidity [%d ]" icon="humidity"
+			Switch item=gHeadAC label="Air Conditioner" icon="aircond"
+                        Chart item=gHeadCT period=h refresh=1000 legend=true
+                        Chart item=gHeadCH period=h refresh=1000 legend=true
+		    }
+                    Group item=gMeetingRoom label="Meeting Room" icon="conference"{
+			Switch item=Day label="Day" icon="sun"
+			Switch item=Night label="Night" icon="moon"
+			Switch item=gMeetingRoomAC label="Air Conditioner" icon="aircond"
+			Switch item=Lights label="Lights" icon="idea"
+                        Text item=gMeetingRoomT label="Temperature [%.1f °C]" icon="temperature"
+			Text item=People label="People in Meeting [%d ]" icon="parents_1_1"
+                        Text item=gMeetingRoomH label="Humidity [%d ]" icon="humidity"
+                        Chart item=gMeetingRoomCT period=h refresh=1000 legend=true
+                        Chart item=gMeetingRoomCH period=h refresh=1000 legend=true
+
+                    }
+		    Group item=gPowerCon label="Power Consumption" icon="flash"{
+			Text item=gPower label="Power Consumption [%.2f watts]" icon="flash"
+                        Chart item=gPowerCP period=h refresh=1000 legend=true
+		    }
+		    Group item=gMessenger label="Messenger Car" icon="cars"{
+		    	Webview url="http://localhost/Location1.php"  label="Car Route" icon="location" height=10
+		    }
+              }
+       }
+}       
